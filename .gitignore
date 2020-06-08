@@ -22,6 +22,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 ServerApp/Scripts/Projects/ClientApp/
+ServerApp/Migrations/
 
 # Visual Studio 2015 cache/options directory
 .vs/
