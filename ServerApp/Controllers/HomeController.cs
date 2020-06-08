@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServerApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,13 @@ namespace ServerApp.Controllers
 {
     public class HomeController : Controller
     {
+        private DataContext context;
+
+        public HomeController(DataContext context)
+        {
+            this.context = context;
+        }
+
         // GET: Home
         public ActionResult Index()
         {
