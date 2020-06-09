@@ -27,6 +27,8 @@ namespace ServerApp
         protected override IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
+            System.Web.Http.GlobalConfiguration.Configuration.DependencyResolver = new Ninject.WebApi.DependencyResolver.NinjectDependencyResolver(kernel);
+
             RegisterServices(kernel);
             return kernel;
         }
