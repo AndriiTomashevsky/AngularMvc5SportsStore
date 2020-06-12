@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using Newtonsoft.Json.Serialization;
+using Ninject;
 using Ninject.Web.Common.WebHost;
 using ServerApp.App_Start;
 using ServerApp.Models;
@@ -24,7 +25,7 @@ namespace ServerApp
 
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
 
         protected override IKernel CreateKernel()
