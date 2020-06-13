@@ -257,6 +257,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductValuesController.cs" />
+    <Compile Include="Controllers\SupplierValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -265,6 +266,8 @@
       <DependentUpon>202006081738583_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BindingTargets\ProductData.cs" />
+    <Compile Include="Models\BindingTargets\SupplierData.cs" />
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Rating.cs" />
