@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
 using ServerApp.Models.BindingTargets;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace ServerApp.Controllers
 {
@@ -150,6 +151,37 @@ namespace ServerApp.Controllers
                 }
 
                 context.SaveChanges();
+                return Ok();
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
+
+        [HttpPatch]
+        public IHttpActionResult UpdateProduct(long id, [FromBody]JsonPatchDocument<ProductData> patch)
+        {
+            Product product = context.Products.Include(p => p.Supplier).First(p => p.ProductId == id);
+            ProductData pdata = new ProductData { Product = product };
+
+            patch.ApplyTo(pdata);
+
+            if (product.Supplier != null && product.Supplier.SupplierId != 0)
+            {
+                Supplier dbEntryS = context.Suppliers.Find(product.Supplier);
+
+                if (dbEntryS != null)
+                {
+                    context.Suppliers.Attach(dbEntryS);
+                }
+
+            }
+
+            if (ModelState.IsValid)
+            {
+                context.SaveChanges();
+
                 return Ok();
             }
             else
