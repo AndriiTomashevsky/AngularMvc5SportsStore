@@ -189,5 +189,18 @@ namespace ServerApp.Controllers
                 return BadRequest(ModelState);
             }
         }
+
+        [HttpDelete]
+        public void DeleteProduct(long id)
+        {
+            Product dbEntry = context.Products.Find(id);
+
+            if (dbEntry != null)
+            {
+                context.Products.Remove(dbEntry);
+            }
+
+            context.SaveChanges();
+        }
     }
 }
