@@ -142,6 +142,38 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\lib\font-awesome\css\all.css" />
+    <Content Include="Content\lib\font-awesome\css\all.min.css" />
+    <Content Include="Content\lib\font-awesome\css\brands.css" />
+    <Content Include="Content\lib\font-awesome\css\brands.min.css" />
+    <Content Include="Content\lib\font-awesome\css\fontawesome.css" />
+    <Content Include="Content\lib\font-awesome\css\fontawesome.min.css" />
+    <Content Include="Content\lib\font-awesome\css\regular.css" />
+    <Content Include="Content\lib\font-awesome\css\regular.min.css" />
+    <Content Include="Content\lib\font-awesome\css\solid.css" />
+    <Content Include="Content\lib\font-awesome\css\solid.min.css" />
+    <Content Include="Content\lib\font-awesome\css\svg-with-js.css" />
+    <Content Include="Content\lib\font-awesome\css\svg-with-js.min.css" />
+    <Content Include="Content\lib\font-awesome\css\v4-shims.css" />
+    <Content Include="Content\lib\font-awesome\css\v4-shims.min.css" />
+    <Content Include="Content\lib\font-awesome\js\all.js" />
+    <Content Include="Content\lib\font-awesome\js\all.min.js" />
+    <Content Include="Content\lib\font-awesome\js\brands.js" />
+    <Content Include="Content\lib\font-awesome\js\brands.min.js" />
+    <Content Include="Content\lib\font-awesome\js\fontawesome.js" />
+    <Content Include="Content\lib\font-awesome\js\fontawesome.min.js" />
+    <Content Include="Content\lib\font-awesome\js\regular.js" />
+    <Content Include="Content\lib\font-awesome\js\regular.min.js" />
+    <Content Include="Content\lib\font-awesome\js\solid.js" />
+    <Content Include="Content\lib\font-awesome\js\solid.min.js" />
+    <Content Include="Content\lib\font-awesome\js\v4-shims.js" />
+    <Content Include="Content\lib\font-awesome\js\v4-shims.min.js" />
+    <Content Include="Content\lib\font-awesome\sprites\brands.svg" />
+    <Content Include="Content\lib\font-awesome\sprites\regular.svg" />
+    <Content Include="Content\lib\font-awesome\sprites\solid.svg" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-solid-900.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -166,6 +198,18 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\lib\font-awesome\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -266,10 +310,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006081738583_InitialCreate.cs" />
-    <Compile Include="Migrations\202006081738583_InitialCreate.designer.cs">
-      <DependentUpon>202006081738583_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BindingTargets\ProductData.cs" />
     <Compile Include="Models\BindingTargets\SupplierData.cs" />
@@ -314,11 +354,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006081738583_InitialCreate.resx">
-      <DependentUpon>202006081738583_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
