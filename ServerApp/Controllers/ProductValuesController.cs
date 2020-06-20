@@ -56,7 +56,7 @@ namespace ServerApp.Controllers
             return result;
         }
 
-        public IEnumerable<Product> GetProducts(string category = null, string search = null, bool related = false)
+        public IHttpActionResult GetProducts(string category = null, string search = null, bool related = false, bool metadata = false)
         {
             IQueryable<Product> query = context.Products;
 
@@ -70,7 +70,7 @@ namespace ServerApp.Controllers
             {
                 string searchLower = search.ToLower();
                 query = query.Where(p => p.Name.ToLower().Contains(searchLower)
-                || p.Description.ToLower().Contains(searchLower));
+                            || p.Description.ToLower().Contains(searchLower));
             }
 
             if (related)
@@ -91,12 +91,21 @@ namespace ServerApp.Controllers
                     }
                 });
 
-                return data;
+                return metadata ? CreateMetadata(data) : Ok(data);
             }
             else
             {
-                return query;
+                return metadata ? CreateMetadata(query) : Ok(query);
             }
+        }
+
+        private IHttpActionResult CreateMetadata(IEnumerable<Product> products)
+        {
+            return Ok(new
+            {
+                data = products,
+                categories = context.Products.Select(p => p.Category).Distinct().OrderBy(c => c)
+            });
         }
 
         [HttpPost]

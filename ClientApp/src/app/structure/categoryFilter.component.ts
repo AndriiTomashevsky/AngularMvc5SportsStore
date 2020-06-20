@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Repository } from "../models/repository";
 
-@Component({
-  selector: "category-filter",
-  templateUrl: "categoryFilter.component.html"
-})
+//@Component({
+//  selector: "category-filter",
+//  templateUrl: "categoryFilter.component.html"
+//})
 export class CategoryFilterComponent
 {
   public chessCategory = "chess";
