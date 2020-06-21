@@ -6,12 +6,11 @@ import { ModelModule } from "./models/model.module";
 //import { ProductTableComponent } from './structure/productTable.component';
 //import { CategoryFilterComponent } from './structure/categoryFilter.component';
 //import { ProductDetailComponent } from './structure/productDetail.component';
-import { FormsModule } from '@angular/forms';
 import { StoreModule } from "./store/store.module";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ModelModule, FormsModule, StoreModule],
+  imports: [BrowserModule, AppRoutingModule, ModelModule, StoreModule],
   providers: [],
   bootstrap: [AppComponent]
 })

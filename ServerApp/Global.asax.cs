@@ -44,5 +44,18 @@ namespace ServerApp
             // e.g. kernel.Load(Assembly.GetExecutingAssembly());
             kernel.Bind<DataContext>().To<DataContext>();
         }
+
+        protected void Application_PostAuthorizeRequest()
+        {
+            if (IsWebApiRequest())
+            {
+                System.Web.HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
+            }
+        }
+
+        private bool IsWebApiRequest()
+        {
+            return HttpContext.Current.Request.AppRelativeCurrentExecutionFilePath.StartsWith("~/api");
+        }
     }
 }
