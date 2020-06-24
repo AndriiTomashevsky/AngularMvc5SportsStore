@@ -15,7 +15,7 @@ namespace ServerApp
 
             routes.MapRoute(
                 name: "angular_fallback",
-                url: "{target:regex(store)}/{*catchall}",
+                url: "{target:regex(store|cart|checkout)}/{*catchall}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
