@@ -8,9 +8,11 @@ using System.Web.Http;
 using System.Data.Entity;
 using ServerApp.Models.BindingTargets;
 using Microsoft.AspNetCore.JsonPatch;
+using System.Web.Http.Cors;
 
 namespace ServerApp.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*", SupportsCredentials = true)]
     public class ProductValuesController : ApiController
     {
         private DataContext context;

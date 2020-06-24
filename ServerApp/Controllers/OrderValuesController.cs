@@ -6,9 +6,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
+using System.Web.Http.Cors;
 
 namespace ServerApp.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*", SupportsCredentials = true)]
     public class OrderValuesController : ApiController
     {
         private DataContext context;

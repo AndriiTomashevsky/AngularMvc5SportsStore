@@ -366,6 +366,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BindingTargets\CheckoutState.cs" />
     <Compile Include="Models\BindingTargets\ProductData.cs" />
     <Compile Include="Models\BindingTargets\SupplierData.cs" />
     <Compile Include="Models\CartProductSelection.cs" />

@@ -6,10 +6,10 @@ import { Supplier } from './supplier.model';
 import { Observable } from "rxjs";
 import { Order, OrderConfirmation } from "./order.model";
 
-const productsUrl = "/api/productvalues";
-const suppliersUrl = "/api/suppliervalues";
-const sessionUrl = "/api/sessionvalues";
-const ordersUrl = "/api/ordervalues";
+const productsUrl = "http://localhost:50015/api/productvalues";
+const suppliersUrl = "http://localhost:50015/api/suppliervalues";
+const sessionUrl = "http://localhost:50015/api/sessionvalues";
+const ordersUrl = "http://localhost:50015/api/ordervalues";
 
 type productsMetadata = {
   data: Product[],
