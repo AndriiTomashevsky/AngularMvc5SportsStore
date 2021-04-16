@@ -4,10 +4,17 @@ import { HttpClient } from "@angular/common/http";
 import { Filter, Pagination } from "./configClasses.repository";
 import { Supplier } from './supplier.model';
 import { Observable } from "rxjs";
+import { Order, OrderConfirmation } from "./order.model";
 
 const productsUrl = "/api/productvalues";
 const suppliersUrl = "/api/suppliervalues";
 const sessionUrl = "/api/sessionvalues";
+const ordersUrl = "/api/ordervalues";
+
+//const productsUrl = "http://localhost:50015/api/productvalues";
+//const suppliersUrl = "http://localhost:50015/api/suppliervalues";
+//const sessionUrl = "http://localhost:50015/api/sessionvalues";
+//const ordersUrl = "http://localhost:50015/api/ordervalues";
 
 type productsMetadata = {
   data: Product[],
@@ -23,6 +30,7 @@ export class Repository
   filter: Filter = new Filter();
   categories: string[] = [];
   paginationObject = new Pagination();
+  orders: Order[] = [];
 
   constructor(private http: HttpClient)
   {
@@ -158,5 +166,29 @@ export class Repository
   getSessionData<T>(dataType: string): Observable<T>
   {
     return this.http.get<T>(`${sessionUrl}/${dataType}`);
+  }
+
+  getOrders()
+  {
+    this.http.get<Order[]>(ordersUrl).subscribe(data => this.orders = data);
+  }
+  createOrder(order: Order)
+  {
+    this.http.post<OrderConfirmation>(ordersUrl, {
+      name: order.name,
+      address: order.address,
+      payment: order.payment,
+      products: order.products
+    }).subscribe(data =>
+    {
+      order.orderConfirmation = data
+      order.cart.clear();
+      order.clear();
+    });
+  }
+
+  shipOrder(order: Order)
+  {
+    this.http.post(`${ordersUrl}/${order.orderId}`, {}).subscribe(() => this.getOrders())
   }
 }

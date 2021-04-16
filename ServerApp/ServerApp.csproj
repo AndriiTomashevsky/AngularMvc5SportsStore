@@ -272,16 +272,6 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
-    <Content Include="Scripts\Projects\ClientApp\3rdpartylicenses.txt" />
-    <Content Include="Scripts\Projects\ClientApp\favicon.ico" />
-    <Content Include="Scripts\Projects\ClientApp\index.html" />
-    <Content Include="Scripts\Projects\ClientApp\main-es2015.0b8ede00833c4fc920a4.js" />
-    <Content Include="Scripts\Projects\ClientApp\main-es5.0b8ede00833c4fc920a4.js" />
-    <Content Include="Scripts\Projects\ClientApp\polyfills-es2015.5b10b8fd823b6392f1fd.js" />
-    <Content Include="Scripts\Projects\ClientApp\polyfills-es5.3e8196928d184a6e5319.js" />
-    <Content Include="Scripts\Projects\ClientApp\runtime-es2015.c5fa8325f89fc516600b.js" />
-    <Content Include="Scripts\Projects\ClientApp\runtime-es5.c5fa8325f89fc516600b.js" />
-    <Content Include="Scripts\Projects\ClientApp\styles.3ff695c00d717f2d2a11.css" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />
@@ -358,6 +348,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderValuesController.cs" />
     <Compile Include="Controllers\ProductValuesController.cs" />
     <Compile Include="Controllers\SessionValuesController.cs" />
     <Compile Include="Controllers\SupplierValuesController.cs" />
@@ -365,10 +356,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BindingTargets\CheckoutState.cs" />
     <Compile Include="Models\BindingTargets\ProductData.cs" />
     <Compile Include="Models\BindingTargets\SupplierData.cs" />
     <Compile Include="Models\CartProductSelection.cs" />
     <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Supplier.cs" />
@@ -403,6 +396,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\Projects\ClientApp\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using ServerApp.Models;
+using ServerApp.Models.BindingTargets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,27 @@ namespace ServerApp.Controllers
         {
             string jsonData = JsonConvert.SerializeObject(products);
             HttpContext.Current.Session["Cart"] = jsonData;
+        }
+
+        public IHttpActionResult GetCheckout()
+        {
+            string jsonData = HttpContext.Current.Session["Checkout"]?.ToString();
+            object checkout = null;
+
+            if (jsonData != null)
+            {
+                JavaScriptSerializer j = new JavaScriptSerializer();
+                checkout = j.Deserialize(jsonData, typeof(object));
+            }
+
+            return Ok(checkout);
+        }
+
+        [System.Web.Http.HttpPost]
+        public void StoreCheckout([FromBody] CheckoutState data)
+        {
+            string jsonData = JsonConvert.SerializeObject(data);
+            HttpContext.Current.Session["Checkout"] = jsonData;
         }
     }
 }
